@@ -265,26 +265,20 @@ void mostrar() {
     }
 }
 
-void espanol() {
-     cout << "Dato a eliminar: ";
-    T ref = solicitarDato();
-    
-    Nodo *p = pInicio, *q = NULL;
-    
-    while(p != NULL && !comparar(p->dato, ref)){
-        q = p;
-        p = p->sig;
+void espanol(){
+    Libro p; Nodo *s = pInicio;
+    if(p.espanol == true){
+        mostrarDato(s->dato);
+        s = s->sig;
     }
-    if(p == NULL){
-        cout << "Dato a borrar NO existe" << endl;
-        return;
+}
+
+void Misterio(){
+    Libro p; Nodo *s = pInicio;
+    if(p.genero == ciencia_ficcion ){
+        mostrarDato(s->dato);
+        s = s->sig;
     }
-    if(q == NULL)
-        pInicio = p->sig;
-    else
-        q->sig = p->sig;
-    delete(p);
-    cout << "Dato borrado!" << endl;
 }
 
 void eliminar(){
